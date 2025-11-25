@@ -5,3 +5,7 @@ body {
 #Creature {
     justify-content: center;
 };
+
+#NeedsFood {
+    width: 500px
+};
