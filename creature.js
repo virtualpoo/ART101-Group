@@ -2,8 +2,11 @@
 var $fruitImg = null;
 var isReadyToEat = false;
 
-var blueget=false
-var orangeget=false
+var blueget=false;
+var orangeget=false;
+var pinkget=false;
+var purpleget = false;
+var yellowget = false;
 //hover over fruit animation
 $(".Fruit").hover(function(){
     $(this).animate({
@@ -58,6 +61,90 @@ $(function OrangeFruit() {
         $fruitImg = $("<img>", {
             id: "OrangeCursor",
             src: "pictures/Orange_Cursor.PNG",
+            width: '100px',
+            alt: "Fruit",
+        })
+        
+        .css({
+            pointerEvents: "none",
+            position: "absolute",
+        });
+
+        $("body").append($fruitImg);
+
+        $(document).on("mousemove.fruitFollow", function (event) {
+            if (!$fruitImg) return;
+            $fruitImg.css({
+                left: event.pageX + "px",
+                top: event.pageY + "px"
+             });
+        });
+});
+});
+
+$(function PinkFruit() {
+
+    $("#GetPinkFruit").click(function () {
+        pinkget=true;
+        $fruitImg = $("<img>", {
+            id: "PinkCursor",
+            src: "pictures/Pink_Cursor.PNG",
+            width: '100px',
+            alt: "Fruit",
+        })
+        
+        .css({
+            pointerEvents: "none",
+            position: "absolute",
+        });
+
+        $("body").append($fruitImg);
+
+        $(document).on("mousemove.fruitFollow", function (event) {
+            if (!$fruitImg) return;
+            $fruitImg.css({
+                left: event.pageX + "px",
+                top: event.pageY + "px"
+             });
+        });
+});
+});
+
+$(function PurpleFruit() {
+
+    $("#GetPurpleFruit").click(function () {
+        purpleget=true;
+        $fruitImg = $("<img>", {
+            id: "PurpleCursor",
+            src: "pictures/Purple_Cursor.PNG",
+            width: '100px',
+            alt: "Fruit",
+        })
+        
+        .css({
+            pointerEvents: "none",
+            position: "absolute",
+        });
+
+        $("body").append($fruitImg);
+
+        $(document).on("mousemove.fruitFollow", function (event) {
+            if (!$fruitImg) return;
+            $fruitImg.css({
+                left: event.pageX + "px",
+                top: event.pageY + "px"
+             });
+        });
+});
+});
+
+$(function YellowFruit() {
+
+    $("#GetYellowFruit").click(function () {
+        yellowget=true;
+        $fruitImg = $("<img>", {
+            id: "YellowCursor",
+            src: "pictures/Yellow_Cursor.PNG",
             width: '100px',
             alt: "Fruit",
         })
@@ -140,7 +227,59 @@ $("#WaitingForEating").click(
             setTimeout(TurnOrange, 2000, $img);
             console.log('turned orange')
             orangeget = false
-        }
+        };
+
+        if (pinkget) {
+            $img
+                .attr("id", "EatingPinkFruit")
+                .attr("src", "pictures/Eating_Food.PNG")
+                .css("width", "500");
+            isReadyToEat = false;  
+            
+                function TurnPink($img){
+                    $img
+                        .attr("id", "TurnedPink")
+                        .attr("src", "pictures/Turning_Pink.PNG")
+                        .css("width", "500");
+                };
+            setTimeout(TurnPink, 2000, $img);
+            console.log('turned pink')
+            pinkget = false
+        };
+
+        if (purpleget) {
+            $img
+                .attr("id", "EatingPurpleFruit")
+                .attr("src", "pictures/Eating_Food.PNG")
+                .css("width", "500");
+            isReadyToEat = false;  
+            
+                function TurnPurple($img){
+                    $img
+                        .attr("id", "TurnedPurple")
+                        .attr("src", "pictures/Turning_Purple.PNG")
+                        .css("width", "500");
+                };
+            setTimeout(TurnPurple, 2000, $img);
+            console.log('turned purple')
+            purpleget = false};
+
+            if (yellowget) {
+            $img
+                .attr("id", "EatingYellowFruit")
+                .attr("src", "pictures/Eating_Food.PNG")
+                .css("width", "500");
+            isReadyToEat = false;  
+            
+                function TurnYellow($img){
+                    $img
+                        .attr("id", "TurnedYellow")
+                        .attr("src", "pictures/Turning_Yellow.PNG")
+                        .css("width", "500");
+                };
+            setTimeout(TurnYellow, 2000, $img);
+            console.log('turned yellow')
+            yellowget = false};
 });
 }));
 
