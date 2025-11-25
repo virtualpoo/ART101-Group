@@ -2,6 +2,10 @@ body {
     background-image: url('pictures/Background.png');
     background-size: 1200px;
 }
-#creature {
+#Creature {
     justify-content: center;
+}
+
+#NeedsFood {
+    width: 500px;
 }
