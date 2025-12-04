@@ -1,12 +1,79 @@
+//Make Slugwalk Float And Bounce//
+$(function () {
+    var $slugwalk = $(".creature");
+    $slugwalk.css("position", "absolute");
+
+    var speed = 3;
+
+    var DirectionX;
+    if (Math.random() < 0.5) {
+        DirectionX = -1;
+    }
+    else {
+        DirectionX = 1;
+    };
+
+
+    var DirectionY;
+    if (Math.random() < 0.5) {
+        DirectionY = -1;
+    }
+    else {
+        DirectionY = 1;
+    };
+
+    var MaxX = $(window).width() - $slugwalk.width();
+    var MaxY = $(window).height() - $slugwalk.height();
+
+    var PositionX = Math.random() * MaxX;
+    var PositionY = Math.random() * MaxY;
+
+    $slugwalk.css({
+        left: PositionX + "px",
+        top: PositionY + "px"
+    });
+
+    function SlugwalkMove() {
+        PositionX += speed * DirectionX;
+        PositionY += speed * DirectionY;
+
+        //fit to window if user resizes
+        MaxX = $(window).width() - $slugwalk.width();
+        MaxY = $(window).height() - $slugwalk.height();
+
+        if (PositionX <= 0) {
+            PositionX = 0;
+            DirectionX = -DirectionX;
+        }
+        else if (PositionX >= MaxX) {
+            PositionX = MaxX;
+            DirectionX = -DirectionX;
+        }
+
+        if (PositionY <= 0) {
+            PositionY = -0;
+            DirectionY = -DirectionY;
+        }
+        else if (PositionY >= MaxY) {
+            PositionY = MaxY;
+            DirectionY = -DirectionY;
+        }
+
+        $slugwalk.css({
+            left: PositionX + "px",
+            top: PositionY + "px"
+        });
+    };
+
+    setInterval(SlugwalkMove, 20);
+});
+
+
 //Food Inter//
 var $fruitImg = null;
 var isReadyToEat = false;
 
-var blueget=false;
-var orangeget=false;
-var pinkget=false;
-var purpleget = false;
-var yellowget = false;
+var friendshiplevel = 0
 //hover over fruit animation
 $(".Fruit").hover(function(){
     $(this).animate({
@@ -18,23 +85,95 @@ function(){
         width: '250px',})
 });
 
-//currently empty, scales w/ css (no animation)
-$("").hover(
-function(){$(this).css("transform", "scale(1.5)");},
-function(){$(this).css("transform", "scale(1)");},
-);
+
+//interactions
+let hungrymessage = ["I'm so hungry...","I want some fruit...", "My stomach is growling...","Uugghh..."];
 
 
-//Get Food//
-$(function BlueFruit() {
+//request system, based on color fruit requested
+let colorRequests = ["Blue","Pink","Yellow","Purple","Orange"];
+let requestedColor = ""
 
-    $("#GetBlueFruit").click(function () {
-       blueget=true; //marks if blue was clicked
+function generateRequest() {
+
+    const i = Math.floor(Math.random() * colorRequests.length);
+    requestedColor = colorRequests[i];
+    //display message with random fruit request
+    $("#request").html("I want some " + requestedColor + " Fruit...");
+   
+
+};
+
+//call
+generateRequest();
+
+// Function to check response
+
+function checkColor(requestedColor) {
+    if (requestedColor === "Blue") {
+        if ($fruitImg.attr("id") === "BlueCursor") { // if requested blue and ID is BlueCursor
+            $("#messagep").html('Just what I wanted! Thanks!');
+            friendshiplevel += 1;
+            generateRequest(); // new request
+        } else {
+            $("#messagep").html("I didn't want that...");
+            friendshiplevel -= 1;
+        }
+
+    } else if (requestedColor === "Orange") {
+        if ($fruitImg.attr("id") === "OrangeCursor") {
+            $("#messagep").html('Just what I wanted! Thanks!');
+            friendshiplevel += 1;
+            generateRequest();
+        } else {
+            $("#messagep").html("I didn't want that...");
+            friendshiplevel -= 1;
+        }
+
+    } else if (requestedColor === "Purple") {
+        if ($fruitImg.attr("id") === "PurpleCursor") {
+            $("#messagep").html('Just what I wanted! Thanks!');
+            friendshiplevel += 1;
+            generateRequest();
+        } else {
+            $("#messagep").html("I didn't want that...");
+            friendshiplevel -= 1;
+        }
+
+    } else if (requestedColor === "Pink") {
+        if ($fruitImg.attr("id") === "PinkCursor") {
+            $("#messagep").html('Just what I wanted! Thanks!');
+            friendshiplevel += 1;
+            generateRequest();
+        } else {
+            $("#messagep").html("I didn't want that...");
+            friendshiplevel -= 1;
+        }
+
+    } else if (requestedColor === "Yellow") {
+        if ($fruitImg.attr("id") === "YellowCursor") {
+            $("#messagep").html('Just what I wanted! Thanks!');
+            friendshiplevel += 1;
+            generateRequest();
+        } else {
+            $("#messagep").html("I didn't want that...");
+            friendshiplevel -= 1;
+        }
+    }
+};
+
+
+
+
+//general fruit cursor function
+function fruitCursor (id, src){
+    if ($fruitImg) {
+            $fruitImg.remove("img");};
+
        $fruitImg = $("<img>", {
-            id: "BlueCursor",
-            src: "pictures/Blue_Cursor.PNG",
+            id: id,
+            src: src,
             width: '100px',
-            alt: "Fruit",
         })
         
         .css({
@@ -51,120 +190,28 @@ $(function BlueFruit() {
                 top: event.pageY + "px"
              });
         });
+};             
+
+//specific values based on clicked fruit
+$("#GetBlueFruit").click(function() {
+    fruitCursor("BlueCursor", "pictures/Blue_Cursor.PNG");
     });
-});
 
-$(function OrangeFruit() {
+    $("#GetOrangeFruit").click(function() {
+    fruitCursor("OrangeCursor", "pictures/Orange_Cursor.PNG");
+    });
 
-    $("#GetOrangeFruit").click(function () {
-        orangeget=true;
-        $fruitImg = $("<img>", {
-            id: "OrangeCursor",
-            src: "pictures/Orange_Cursor.PNG",
-            width: '100px',
-            alt: "Fruit",
-        })
-        
-        .css({
-            pointerEvents: "none",
-            position: "absolute",
-        });
+    $("#GetPinkFruit").click(function() {
+    fruitCursor("PinkCursor", "pictures/Pink_Cursor.PNG");
+    });
 
-        $("body").append($fruitImg);
+    $("#GetPurpleFruit").click(function() {
+    fruitCursor("PurpleCursor", "pictures/Purple_Cursor.PNG");
+    });
 
-        $(document).on("mousemove.fruitFollow", function (event) {
-            if (!$fruitImg) return;
-            $fruitImg.css({
-                left: event.pageX + "px",
-                top: event.pageY + "px"
-             });
-        });
-});
-});
-
-$(function PinkFruit() {
-
-    $("#GetPinkFruit").click(function () {
-        pinkget=true;
-        $fruitImg = $("<img>", {
-            id: "PinkCursor",
-            src: "pictures/Pink_Cursor.PNG",
-            width: '100px',
-            alt: "Fruit",
-        })
-        
-        .css({
-            pointerEvents: "none",
-            position: "absolute",
-        });
-
-        $("body").append($fruitImg);
-
-        $(document).on("mousemove.fruitFollow", function (event) {
-            if (!$fruitImg) return;
-            $fruitImg.css({
-                left: event.pageX + "px",
-                top: event.pageY + "px"
-             });
-        });
-});
-});
-
-$(function PurpleFruit() {
-
-    $("#GetPurpleFruit").click(function () {
-        purpleget=true;
-        $fruitImg = $("<img>", {
-            id: "PurpleCursor",
-            src: "pictures/Purple_Cursor.PNG",
-            width: '100px',
-            alt: "Fruit",
-        })
-        
-        .css({
-            pointerEvents: "none",
-            position: "absolute",
-        });
-
-        $("body").append($fruitImg);
-
-        $(document).on("mousemove.fruitFollow", function (event) {
-            if (!$fruitImg) return;
-            $fruitImg.css({
-                left: event.pageX + "px",
-                top: event.pageY + "px"
-             });
-        });
-});
-});
-
-$(function YellowFruit() {
-
-    $("#GetYellowFruit").click(function () {
-        yellowget=true;
-        $fruitImg = $("<img>", {
-            id: "YellowCursor",
-            src: "pictures/Yellow_Cursor.PNG",
-            width: '100px',
-            alt: "Fruit",
-        })
-        
-        .css({
-            pointerEvents: "none",
-            position: "absolute",
-        });
-
-        $("body").append($fruitImg);
-
-        $(document).on("mousemove.fruitFollow", function (event) {
-            if (!$fruitImg) return;
-            $fruitImg.css({
-                left: event.pageX + "px",
-                top: event.pageY + "px"
-             });
-        });
-});
-});
+    $("#GetYellowFruit").click(function() {
+    fruitCursor("YellowCursor", "pictures/Yellow_Cursor.PNG");
+    });
 
 //On mouse hover, changes image
 $("#NeedsFood").hover(
@@ -181,19 +228,18 @@ $("#NeedsFood").hover(
 );
 
 
+
+
+
 //Eat Food, when creature image clicked, changes image during eating, then changes color based on fruit picked//
-$("#WaitingForEating").click(
-    $(function () {
-    $(document).on("click", "#WaitingForEating", function () {
-        if (!isReadyToEat) return;
-
-        var $img = $(this);
-
+$(document).on("click", "#WaitingForEating", function() {
+    if (!isReadyToEat) return;
+    var $img = $(this);
+    checkColor(requestedColor)
         if ($fruitImg) {
-            $fruitImg.remove();};
-            $fruitImg = null;
+            $fruitImg.remove("img");};
 
-        if (blueget) { //if blue was clicked
+        if (($fruitImg.attr("id") === "BlueCursor")) { //if blue was clicked
             $img
                 .attr("id", "EatingBlueFruit")
                 .attr("src", "pictures/Eating_Food.PNG")
@@ -211,7 +257,7 @@ $("#WaitingForEating").click(
             console.log('turnedblue')
             blueget = false};
 
-        if (orangeget) {
+        if (($fruitImg.attr("id") === "OrangeCursor")) {
             $img
                 .attr("id", "EatingOrangeFruit")
                 .attr("src", "pictures/Eating_Food.PNG")
@@ -229,7 +275,7 @@ $("#WaitingForEating").click(
             orangeget = false
         };
 
-        if (pinkget) {
+        if (($fruitImg.attr("id") === "PinkCursor")) {
             $img
                 .attr("id", "EatingPinkFruit")
                 .attr("src", "pictures/Eating_Food.PNG")
@@ -247,7 +293,7 @@ $("#WaitingForEating").click(
             pinkget = false
         };
 
-        if (purpleget) {
+        if ($fruitImg.attr("id") === "PurpleCursor") {
             $img
                 .attr("id", "EatingPurpleFruit")
                 .attr("src", "pictures/Eating_Food.PNG")
@@ -264,7 +310,7 @@ $("#WaitingForEating").click(
             console.log('turned purple')
             purpleget = false};
 
-            if (yellowget) {
+            if (($fruitImg.attr("id") === "YellowCursor")) {
             $img
                 .attr("id", "EatingYellowFruit")
                 .attr("src", "pictures/Eating_Food.PNG")
@@ -280,8 +326,9 @@ $("#WaitingForEating").click(
             setTimeout(TurnYellow, 2000, $img);
             console.log('turned yellow')
             yellowget = false};
+            $fruitImg = null;
 });
-}));
+
 
 
 
