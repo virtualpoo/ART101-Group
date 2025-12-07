@@ -115,9 +115,14 @@ function checkColor(requestedColor) {
             $("#messagep").html('Just what I wanted! Thanks!');
             friendshiplevel += 1;
             generateRequest(); // new request
+            // Play LIKE sound
+        document.getElementById("likeSound").play();
         } else {
             $("#messagep").html("I didn't want that...");
             friendshiplevel -= 1;
+
+        // Play DISLIKE sound
+        document.getElementById("dislikeSound").play();
         }
 
     } else if (requestedColor === "Orange") {
@@ -125,9 +130,11 @@ function checkColor(requestedColor) {
             $("#messagep").html('Just what I wanted! Thanks!');
             friendshiplevel += 1;
             generateRequest();
+            document.getElementById("likeSound").play();
         } else {
             $("#messagep").html("I didn't want that...");
             friendshiplevel -= 1;
+              document.getElementById("dislikeSound").play();
         }
 
     } else if (requestedColor === "Purple") {
@@ -135,9 +142,11 @@ function checkColor(requestedColor) {
             $("#messagep").html('Just what I wanted! Thanks!');
             friendshiplevel += 1;
             generateRequest();
+            document.getElementById("likeSound").play();
         } else {
             $("#messagep").html("I didn't want that...");
             friendshiplevel -= 1;
+              document.getElementById("dislikeSound").play();
         }
 
     } else if (requestedColor === "Pink") {
@@ -145,9 +154,11 @@ function checkColor(requestedColor) {
             $("#messagep").html('Just what I wanted! Thanks!');
             friendshiplevel += 1;
             generateRequest();
+            document.getElementById("likeSound").play();
         } else {
             $("#messagep").html("I didn't want that...");
             friendshiplevel -= 1;
+              document.getElementById("dislikeSound").play();
         }
 
     } else if (requestedColor === "Yellow") {
@@ -155,9 +166,11 @@ function checkColor(requestedColor) {
             $("#messagep").html('Just what I wanted! Thanks!');
             friendshiplevel += 1;
             generateRequest();
+            document.getElementById("likeSound").play();
         } else {
             $("#messagep").html("I didn't want that...");
             friendshiplevel -= 1;
+              document.getElementById("dislikeSound").play();
         }
     }
 };
