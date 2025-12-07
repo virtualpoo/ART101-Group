@@ -115,9 +115,14 @@ function checkColor(requestedColor) {
             $("#messagep").html('Just what I wanted! Thanks!');
             friendshiplevel += 1;
             generateRequest(); // new request
+            // Play LIKE sound
+        document.getElementById("likeSound").play();
         } else {
             $("#messagep").html("I didn't want that...");
             friendshiplevel -= 1;
+
+        // Play DISLIKE sound
+        document.getElementById("dislikeSound").play();
         }
 
     } else if (requestedColor === "Orange") {
@@ -125,9 +130,11 @@ function checkColor(requestedColor) {
             $("#messagep").html('Just what I wanted! Thanks!');
             friendshiplevel += 1;
             generateRequest();
+            document.getElementById("likeSound").play();
         } else {
             $("#messagep").html("I didn't want that...");
             friendshiplevel -= 1;
+              document.getElementById("dislikeSound").play();
         }
 
     } else if (requestedColor === "Purple") {
@@ -135,9 +142,11 @@ function checkColor(requestedColor) {
             $("#messagep").html('Just what I wanted! Thanks!');
             friendshiplevel += 1;
             generateRequest();
+            document.getElementById("likeSound").play();
         } else {
             $("#messagep").html("I didn't want that...");
             friendshiplevel -= 1;
+              document.getElementById("dislikeSound").play();
         }
 
     } else if (requestedColor === "Pink") {
@@ -145,9 +154,11 @@ function checkColor(requestedColor) {
             $("#messagep").html('Just what I wanted! Thanks!');
             friendshiplevel += 1;
             generateRequest();
+            document.getElementById("likeSound").play();
         } else {
             $("#messagep").html("I didn't want that...");
             friendshiplevel -= 1;
+              document.getElementById("dislikeSound").play();
         }
 
     } else if (requestedColor === "Yellow") {
@@ -155,9 +166,11 @@ function checkColor(requestedColor) {
             $("#messagep").html('Just what I wanted! Thanks!');
             friendshiplevel += 1;
             generateRequest();
+            document.getElementById("likeSound").play();
         } else {
             $("#messagep").html("I didn't want that...");
             friendshiplevel -= 1;
+              document.getElementById("dislikeSound").play();
         }
     }
 };
@@ -195,22 +208,27 @@ function fruitCursor (id, src){
 //specific values based on clicked fruit
 $("#GetBlueFruit").click(function() {
     fruitCursor("BlueCursor", "pictures/Blue_Cursor.PNG");
+    document.getElementById("selectSound").play();
     });
 
     $("#GetOrangeFruit").click(function() {
     fruitCursor("OrangeCursor", "pictures/Orange_Cursor.PNG");
+    document.getElementById("selectSound").play();
     });
 
     $("#GetPinkFruit").click(function() {
     fruitCursor("PinkCursor", "pictures/Pink_Cursor.PNG");
+    document.getElementById("selectSound").play();
     });
 
     $("#GetPurpleFruit").click(function() {
     fruitCursor("PurpleCursor", "pictures/Purple_Cursor.PNG");
+    document.getElementById("selectSound").play();
     });
 
     $("#GetYellowFruit").click(function() {
     fruitCursor("YellowCursor", "pictures/Yellow_Cursor.PNG");
+    document.getElementById("selectSound").play();
     });
 
 //On mouse hover, changes image
