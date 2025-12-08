@@ -347,7 +347,14 @@ $(document).on("click", "#WaitingForEating", function() {
             $fruitImg = null;
 });
 
-
+$(".how-to span").click(function () {
+    $(this).parent().toggleClass("help");
+    if ($(this).html() == "help") {
+        $(this).html("okay");
+    } else {
+        $(this).html("help");
+    }
+});
 
 
 
