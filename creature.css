@@ -4,7 +4,7 @@
 }
 
 #Comms{
-    background-image: url(pictures/Speech_UI_2.PNG);
+    background-image: url('pictures/Speech_UI_2.PNG');
     z-index: 15;
     position: absolute;
     padding: 50px;
