@@ -24,3 +24,50 @@ body {
 #Instructions {
     padding-top:500px;
 };
+
+.tree-container {
+    position: relative;  
+    width: 500px; 
+    height: 500px; 
+    bottom: auto;       
+}
+
+#Fruit-Tree {
+    width: 100%;
+    display: block;
+}
+
+#GetBlueFruit {
+    position: absolute;
+    width: 250px;
+    top: 90px;
+    left: 350px;
+}
+
+#GetOrangeFruit {
+    position: absolute;
+    width: 250px;
+    top: 15px;
+    left: 730px;
+}
+
+#GetPinkFruit {
+    position: absolute;
+    width: 250px;
+    bottom: 425px;
+    left: 360px;
+}
+
+#GetPurpleFruit {
+    position: absolute;
+    width: 250px;
+    top: 90px;
+    left: 550px;
+}
+
+#GetYellowFruit {
+    position: absolute;
+    width: 250px;
+    bottom: 465px;
+    left: 800px;
+}
