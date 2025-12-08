@@ -3,6 +3,23 @@
     color:rgb(150, 127, 255) ;
 }
 
+#Comms{
+    background-image: url(pictures/Speech_UI_2.PNG);
+    z-index: 15;
+    position: absolute;
+    padding: 50px;
+    top: 500px;
+    left:800px;
+    text-align: center;
+    color: rgb(31, 31, 100);
+    font-size: large;
+    background-size: 500px;
+    background-repeat: no-repeat;
+    width:400px;
+    height: 400px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+}
 body {
     background-image: url('pictures/Background.png');
     background-repeat: no-repeat;
@@ -10,30 +27,18 @@ body {
     background-position: center;
     background-attachment: fixed;
 };
-body {
-    background-image: url('pictures/Background.png');
-    background-size: 1200px;
-};
+
 #Creature {
     justify-content: center;
     position: relative;
 };
 .creature {
-    position: relative;
+z-index: 16;
+position: relative;
  overflow: visible;}
 #NeedsFood {
     position: relative;
     width: 500px;
-};
-
-#messagediv {
-    position: relative;
-    padding: 10px;
-    border-radius: 30px;
-    background-color: white;
-    border-style: solid;
-    border-color: black;
-    border-width: 5px;
 };
 
 #Instructions {
@@ -73,7 +78,7 @@ body {
     position: absolute;
     width: 250px;
     top: 90px;
-    left: 350px;
+    left: 250px;
 }
 
 #GetOrangeFruit {
@@ -86,7 +91,7 @@ body {
 #GetPinkFruit {
     position: absolute;
     width: 250px;
-    bottom: 425px;
+    bottom: 480px;
     left: 360px;
 }
 
@@ -100,7 +105,7 @@ body {
 #GetYellowFruit {
     position: absolute;
     width: 250px;
-    bottom: 465px;
+    bottom: 365px;
     left: 800px;
 }
 
