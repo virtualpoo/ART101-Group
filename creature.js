@@ -74,6 +74,30 @@ var $fruitImg = null;
 var isReadyToEat = false;
 
 var friendshiplevel = 0
+
+
+function friendship() {
+    setInterval(function() {
+    let pos = $(".creature").position();
+      console.log("Creature position:", pos);
+      $("<img>")
+      .attr("src", "pictures/heart.png")
+      .attr("width", 50)
+      .css({
+        position: 'absolute',
+        zIndex: 5,
+        top: pos.top + 20 + "px",
+        left: pos.left + "px"
+      })
+      .appendTo("#Creature")
+      .animate(
+        { top: "-=60px", left: "+=" + (Math.random() * 300 - 150), opacity: 0 },
+       4000,
+        function() {
+          $(this).remove();});
+      console.log("Heart created");
+    }, 6000);};
+
 //hover over fruit animation
 $(".Fruit").hover(function(){
     $(this).animate({
@@ -115,6 +139,7 @@ function checkColor(requestedColor) {
             $("#messagep").html('Just what I wanted! Thanks!');
             friendshiplevel += 1;
             generateRequest(); // new request
+            friendship()
             // Play LIKE sound
         document.getElementById("likeSound").play();
         } else {
@@ -130,6 +155,7 @@ function checkColor(requestedColor) {
             $("#messagep").html('Just what I wanted! Thanks!');
             friendshiplevel += 1;
             generateRequest();
+            friendship()
             document.getElementById("likeSound").play();
         } else {
             $("#messagep").html("I didn't want that...");
@@ -142,6 +168,7 @@ function checkColor(requestedColor) {
             $("#messagep").html('Just what I wanted! Thanks!');
             friendshiplevel += 1;
             generateRequest();
+            friendship()
             document.getElementById("likeSound").play();
         } else {
             $("#messagep").html("I didn't want that...");
@@ -154,6 +181,7 @@ function checkColor(requestedColor) {
             $("#messagep").html('Just what I wanted! Thanks!');
             friendshiplevel += 1;
             generateRequest();
+            friendship()
             document.getElementById("likeSound").play();
         } else {
             $("#messagep").html("I didn't want that...");
@@ -166,6 +194,7 @@ function checkColor(requestedColor) {
             $("#messagep").html('Just what I wanted! Thanks!');
             friendshiplevel += 1;
             generateRequest();
+            friendship()
             document.getElementById("likeSound").play();
         } else {
             $("#messagep").html("I didn't want that...");
@@ -345,6 +374,8 @@ $(document).on("click", "#WaitingForEating", function() {
             console.log('turned yellow')
             yellowget = false};
             $fruitImg = null;
+            ;
+
 });
 
 $(".how-to span").click(function () {
