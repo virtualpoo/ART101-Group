@@ -37,6 +37,23 @@ body {
     display: block;
 }
 
+.how-to span {
+    cursor: pointer;
+    color: rgb(225, 222, 240);
+};
+
+.tree-container {
+    position: relative;  
+    width: 500px; 
+    height: 500px; 
+    bottom: auto;       
+}
+
+#Fruit-Tree {
+    width: 100%;
+    display: block;
+}
+
 #GetBlueFruit {
     position: absolute;
     width: 250px;
@@ -71,3 +88,5 @@ body {
     bottom: 465px;
     left: 800px;
 }
+
+
