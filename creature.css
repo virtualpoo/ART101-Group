@@ -1,3 +1,17 @@
+#Instructions{
+    padding-top: 350px;
+}
+#click{
+    color:rgb(150, 127, 255) ;
+}
+
+body {
+    background-image: url('pictures/Background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+};
 body {
     background-image: url('pictures/Background.png');
     background-size: 1200px;
