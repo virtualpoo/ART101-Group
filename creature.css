@@ -16,11 +16,14 @@ body {
 };
 #Creature {
     justify-content: center;
+    position: relative;
 };
-
+.creature {
+    position: relative;
+ overflow: visible;}
 #NeedsFood {
-    position: absolute;
-    width: 500px
+    position: relative;
+    width: 500px;
 };
 
 #messagediv {
