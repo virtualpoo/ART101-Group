@@ -13,11 +13,21 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- Link to external JavaScript file (is called creature) -->
     <script src="creature.js" defer></script>
+     <style>
+    .mainImg {
+    width: 700px; 
+    height: 900px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    </style>
 </head>
 
 <body>
 
-<div id="Fruit-Tree">
+<div class="tree-container">
+    <img id="Fruit-Tree" src="tree.png">
 <img id="GetBlueFruit" class="Fruit" width = 250px src="pictures/Blue_Stack.PNG">
 <img id="GetOrangeFruit" class="Fruit" width="250px" src="pictures/Orange_Stack.PNG">
 <img id="GetPinkFruit" class="Fruit" width="250px" src="pictures/Pink_Stack.PNG">
@@ -25,6 +35,7 @@
 <img id="GetYellowFruit" class="Fruit" width="250px" src="pictures/Yellow_Stack.PNG">
 </div>
 
+<img src="pictures/tree.png" width="500px" height="500px" class="mainImg"> 
 
 <div id='Creature'>
 
@@ -37,15 +48,7 @@
 
 </div>
 
-    <audio id="likeSound" src="happy-sound.mp3" preload="auto"></audio>
-<audio id="dislikeSound" src="unhappy-sound.mp3" preload="auto"></audio>
-
-<audio id="selectSound" src="select-fruit.mp3" preload="auto"></audio>
-
-<div class="how-to"><span>help</span> 
-  <p>click on cretures desired fruit and feed it, hurry the creature is very hungry!</p>
-</div>
-
+<img id="Instructions" src="pictures/resized_img/Instruction_UI.PNG" width =250px>
     
 </body>
 
