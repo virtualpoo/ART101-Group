@@ -28,19 +28,13 @@
 <body>
 
 <div class="tree-container">
-    <img id="Fruit-Tree" src="tree.png">
-    <img id="Fruit-Tree" src="Tree.png">
-    <div class="tree-container">
-    <img id="Fruit-Tree">
+<img id="Fruit-Tree" src="pictures/Tree.png" width="500px" height="500px" class="mainImg">
 <img id="GetBlueFruit" class="Fruit" width = 250px src="pictures/Blue_Stack.PNG">
 <img id="GetOrangeFruit" class="Fruit" width="250px" src="pictures/Orange_Stack.PNG">
 <img id="GetPinkFruit" class="Fruit" width="250px" src="pictures/Pink_Stack.PNG">
 <img id="GetPurpleFruit" class="Fruit" width="250px" src="pictures/Purple_Stack.PNG">
 <img id="GetYellowFruit" class="Fruit" width="250px" src="pictures/Yellow_Stack.PNG">
 </div>
-
-<img src="pictures/tree.png" width="500px" height="500px" class="mainImg"> 
-<img src="pictures/Tree.png" width="500px" height="500px" class="mainImg"> 
 
 <div id='Creature'>
 
@@ -53,6 +47,20 @@
 
 </div>
 
+    
+<img id="Instructions" src="#" width="250px">
+</br>
+<button id= "click" onclick="FirstImage()">Instructions</button>
+<button id="click" onclick="SecondImage()">Credits</button>
+<script>
+  var myImage=document.querySelector("#Instructions");
+  function FirstImage(){
+    Instructions.src="pictures/resized_img/Instruction_UI2.PNG"
+  }
+  function SecondImage(){
+    Instructions.src="pictures/resized_img/Credit_UI2.PNG"
+  }
+</script>
     <audio id="likeSound" src="happy-sound.mp3" preload="auto"></audio>
 <audio id="dislikeSound" src="unhappy-sound.mp3" preload="auto"></audio>
 
