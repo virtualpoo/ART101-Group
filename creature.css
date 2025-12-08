@@ -77,36 +77,36 @@ position: relative;
 #GetBlueFruit {
     position: absolute;
     width: 250px;
-    top: 90px;
-    left: 250px;
+    top: 9px;
+    left: 35px;
 }
 
 #GetOrangeFruit {
     position: absolute;
     width: 250px;
     top: 15px;
-    left: 730px;
+    left: 990px;
 }
 
 #GetPinkFruit {
     position: absolute;
     width: 250px;
-    bottom: 480px;
-    left: 360px;
+    bottom: 475px;
+    left: 150px;
 }
 
 #GetPurpleFruit {
     position: absolute;
     width: 250px;
     top: 90px;
-    left: 550px;
+    left: 435px;
 }
 
 #GetYellowFruit {
     position: absolute;
     width: 250px;
-    bottom: 365px;
-    left: 800px;
+    bottom: 470px;
+    left: 700px;
 }
 
 
