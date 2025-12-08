@@ -1,42 +1,61 @@
+
+#click{
+    color:rgb(150, 127, 255) ;
+}
+
+#Comms{
+    background-image: url('pictures/Speech_UI_2.PNG');
+    z-index: 15;
+    position: absolute;
+    padding: 50px;
+    top: 500px;
+    left:800px;
+    text-align: center;
+    color: rgb(31, 31, 100);
+    font-size: large;
+    background-size: 500px;
+    background-repeat: no-repeat;
+    width:400px;
+    height: 400px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 800;
+}
 body {
     background-image: url('pictures/Background.png');
-    background-size: 1200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 };
+
 #Creature {
     justify-content: center;
-};
-
-#NeedsFood {
-    position: absolute;
-    width: 500px
-};
-
-#messagediv {
     position: relative;
-    padding: 10px;
-    border-radius: 30px;
-    background-color: white;
-    border-style: solid;
-    border-color: black;
-    border-width: 5px;
+};
+.creature {
+z-index: 16;
+position: relative;
+ overflow: visible;}
+#NeedsFood {
+    position: relative;
+    width: 500px;
 };
 
-.how-to {
-    height: 20px;
-    overflow: hidden;
-    width: 70px;
-    padding: 10px;
-    background: rgb(232, 192, 255);
-    margin: 20px;
+#Instructions {
+    padding-top:500px;
 };
 
-.okay {
-};
+.tree-container {
+    position: relative;  
+    width: 500px; 
+    height: 500px; 
+    bottom: auto;       
+}
 
-.help {
-    height: auto;
-    overflow: visible;
-};
+#Fruit-Tree {
+    width: 100%;
+    display: block;
+}
 
 .how-to span {
     cursor: pointer;
@@ -58,35 +77,36 @@ body {
 #GetBlueFruit {
     position: absolute;
     width: 250px;
-    top: 90px;
-    left: 350px;
+    top: 9px;
+    left: 35px;
 }
 
 #GetOrangeFruit {
     position: absolute;
     width: 250px;
     top: 15px;
-    left: 730px;
+    left: 990px;
 }
 
 #GetPinkFruit {
     position: absolute;
     width: 250px;
-    bottom: 425px;
-    left: 360px;
+    bottom: 475px;
+    left: 150px;
 }
 
 #GetPurpleFruit {
     position: absolute;
     width: 250px;
     top: 90px;
-    left: 550px;
+    left: 435px;
 }
 
 #GetYellowFruit {
     position: absolute;
     width: 250px;
-    bottom: 465px;
-    left: 800px;
+    bottom: 500px;
+    left: 700px;
 }
+
 

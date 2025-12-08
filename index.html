@@ -13,11 +13,12 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <!-- Link to external JavaScript file (is called creature) -->
     <script src="creature.js" defer></script>
-         <style>
+     <style>
     .mainImg {
     width: 700px; 
-    height: 900px;
+    height: 800px;
     display: block;
+    display: block; 
     margin-left: auto;
     margin-right: auto;
     }
@@ -26,8 +27,8 @@
 
 <body>
 
-    <div class="tree-container">
-    <img id="Fruit-Tree">
+<div class="tree-container">
+<img id="Fruit-Tree" src="pictures/Tree.png" width="500px" height="500px" class="mainImg">
 <img id="GetBlueFruit" class="Fruit" width = 250px src="pictures/Blue_Stack.PNG">
 <img id="GetOrangeFruit" class="Fruit" width="250px" src="pictures/Orange_Stack.PNG">
 <img id="GetPinkFruit" class="Fruit" width="250px" src="pictures/Pink_Stack.PNG">
@@ -35,28 +36,38 @@
 <img id="GetYellowFruit" class="Fruit" width="250px" src="pictures/Yellow_Stack.PNG">
 </div>
 
-<img src="pictures/tree.png" width="500px" height="500px" class="mainImg"> 
-
-<div id='Creature'>
-
-<div id="messagediv">
+<div id="Comms">
 <p id="request">     </p>
 <p id="messagep">     </p>
+
+</div>
+<div id='Creature'>
+
+
 </div>
 
 <img id="NeedsFood" class='creature' src="pictures/Need_Food.PNG" width = "500px">
 
 </div>
 
+    
+<img id="Instructions" src="" width="250px">
+</br>
+<button id= "click" onclick="FirstImage()">Instructions</button>
+<button id="click" onclick="SecondImage()">Credits</button>
+<script>
+  var myImage=document.querySelector("#Instructions");
+  function FirstImage(){
+    Instructions.src="pictures/resized_img/Instruction_UI2.PNG"
+  }
+  function SecondImage(){
+    Instructions.src="pictures/resized_img/Credit_UI2.PNG"
+  }
+</script>
     <audio id="likeSound" src="happy-sound.mp3" preload="auto"></audio>
 <audio id="dislikeSound" src="unhappy-sound.mp3" preload="auto"></audio>
 
 <audio id="selectSound" src="select-fruit.mp3" preload="auto"></audio>
-
-<div class="how-to"><span>help</span> 
-  <p>click on cretures desired fruit and feed it, hurry the creature is very hungry!</p>
-</div>
-
     
 </body>
 
