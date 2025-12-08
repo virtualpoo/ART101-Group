@@ -48,7 +48,20 @@
 
 </div>
 
-
+    
+<img id="Instructions" src="#" width="250px">
+</br>
+<button id= "click" onclick="FirstImage()">Instructions</button>
+<button id="click" onclick="SecondImage()">Credits</button>
+<script>
+  var myImage=document.querySelector("#Instructions");
+  function FirstImage(){
+    Instructions.src="pictures/resized_img/Instruction_UI2.PNG"
+  }
+  function SecondImage(){
+    Instructions.src="pictures/resized_img/Credit_UI2.PNG"
+  }
+</script>
     <audio id="likeSound" src="happy-sound.mp3" preload="auto"></audio>
 <audio id="dislikeSound" src="unhappy-sound.mp3" preload="auto"></audio>
 
